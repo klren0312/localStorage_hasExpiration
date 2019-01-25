@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script src="storage.js"></script>
+  <script>
+    const myStorage = new Storage()
+    myStorage.set('test', {t:1,b:2}, 5)
+    console.log('current,', myStorage.get('test'))
+    setTimeout(() => console.log('after 5s,', myStorage.get('test')), 5000)
+  </script>
+</body>
+</html>
