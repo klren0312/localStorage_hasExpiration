@@ -1,4 +1,4 @@
-class Storage {
+export default class Storage {
   /**
    * 获取时间戳
    */
