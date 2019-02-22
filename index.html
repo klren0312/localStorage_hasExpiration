@@ -9,10 +9,9 @@
 <body>
   <script type="module">
     import Storage from './storage.js'
-    const myStorage = new Storage()
-    myStorage.set('test', {t:1,b:2}, 5)
-    console.log('current,', myStorage.get('test'))
-    setTimeout(() => console.log('after 5s,', myStorage.get('test')), 5000)
+    Storage.set('test', {t:1,b:2}, 5)
+    console.log('current,', Storage.get('test'))
+    setTimeout(() => console.log('after 5s,', Storage.get('test')), 5000)
   </script>
 </body>
 </html>
