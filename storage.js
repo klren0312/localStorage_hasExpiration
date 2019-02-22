@@ -1,4 +1,4 @@
-export default class Storage {
+class Storage {
   /**
    * 获取时间戳
    */
@@ -28,7 +28,7 @@ export default class Storage {
       key,
       value
     }
-    localStorage.setItem(key, JSON.stringify(entity))
+    window.localStorage.setItem(key, JSON.stringify(entity))
     return this
   }
   
@@ -39,7 +39,7 @@ export default class Storage {
   get (key) {
     let entity
     try {
-      entity = localStorage.getItem(key)
+      entity = window.localStorage.getItem(key)
       if (entity) {
         entity = JSON.parse(entity)
       } else {
@@ -67,7 +67,7 @@ export default class Storage {
    */
   remove (key) {
     try {
-      localStorage.removeItem(key)
+      window.localStorage.removeItem(key)
     } catch (err) {
       console.error(err)
     }
@@ -79,10 +79,12 @@ export default class Storage {
    */
   clear () {
     try {
-      localStorage.clear()
+      window.localStorage.clear()
     } catch (err) {
       console.error(err)
     }
     return this
   }
 }
+
+export default new Storage()
