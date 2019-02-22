@@ -1,0 +1,29 @@
+{
+  "name": "zstorage",
+  "version": "1.0.0",
+  "description": "It is the localstorage that has valid time",
+  "main": "storage.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klren0312/localStorage_hasExpiration.git"
+  },
+  "keywords": [
+    "localstorage",
+    "expiration"
+  ],
+  "author": "zzes",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/klren0312/localStorage_hasExpiration/issues"
+  },
+  "homepage": "https://github.com/klren0312/localStorage_hasExpiration#readme",
+  "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/preset-env": "^7.3.1",
+    "babel-jest": "^24.1.0",
+    "jest": "^24.1.0"
+  }
+}
