@@ -6,6 +6,10 @@ test('set value and get value in valid time', () => {
   expect(data).toBe('test value')
 });
 
+/**
+ * 睡眠函数
+ * @param {Number} s 秒
+ */
 function sleep(s) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
