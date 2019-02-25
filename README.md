@@ -1,7 +1,8 @@
-﻿# zstorage
+# zstorage
 the localStorage that has expired time
 
 [![NPM version][npm-image]][npm-url]
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fklren0312%2FlocalStorage_hasExpiration.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fklren0312%2FlocalStorage_hasExpiration?ref=badge_shield)
 
 [npm-image]: https://img.shields.io/badge/npm-v1.0.4-blue.svg
 [npm-url]: https://www.npmjs.com/package/zstorage
@@ -58,3 +59,6 @@ return
 ```
 **clear ()**
 > clear all values from localStorage
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fklren0312%2FlocalStorage_hasExpiration.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fklren0312%2FlocalStorage_hasExpiration?ref=badge_large)
