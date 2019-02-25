@@ -2,7 +2,7 @@
   "name": "zstorage",
   "version": "1.0.0",
   "description": "It is the localstorage that has valid time",
-  "main": "storage.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest"
   },
