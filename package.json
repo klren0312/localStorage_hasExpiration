@@ -4,7 +4,7 @@
   "description": "It is the localstorage that has valid time",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --coverage && codecov -t "
   },
   "repository": {
     "type": "git",
@@ -24,6 +24,7 @@
     "@babel/core": "^7.3.3",
     "@babel/preset-env": "^7.3.1",
     "babel-jest": "^24.1.0",
+    "codecov": "^3.2.0",
     "jest": "^24.1.0"
   }
 }
