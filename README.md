@@ -2,10 +2,11 @@
 the localStorage that has expired time
 
 [![NPM version][npm-image]][npm-url]
+[![npm](https://img.shields.io/npm/dt/zstorage.svg)](https://www.npmjs.com/package/zstorage)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fklren0312%2FlocalStorage_hasExpiration.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fklren0312%2FlocalStorage_hasExpiration?ref=badge_shield)
 [![codecov](https://codecov.io/gh/klren0312/localStorage_hasExpiration/branch/master/graph/badge.svg)](https://codecov.io/gh/klren0312/localStorage_hasExpiration)
 
-[npm-image]: https://img.shields.io/badge/npm-v1.0.4-blue.svg
+[npm-image]: https://img.shields.io/badge/npm-v1.0.8-blue.svg
 [npm-url]: https://www.npmjs.com/package/zstorage
 
 
@@ -16,7 +17,9 @@ $ npm install zstorage --save
 ```
 
 ## Test
-```
+```bash
+$ git clone https://github.com/klren0312/localStorage_hasExpiration.git
+$ cd localStorage_hasExpiration
 $ npm install
 $ npm run test
 ```
@@ -44,6 +47,8 @@ return:
 ```
 **set (key, value, expired_second)**
 > set the localStorage, with key, value and expired_second(unit: s)
+
+**Tips**: You'll not use `JSON.stringify()` to stringify Object or Array
 
 ```
 param:

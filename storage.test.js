@@ -27,3 +27,8 @@ test('get value in invalid time', async () => {
   const data = Storage.get('test')
   expect(data).toBeNull()
 }, 5000);
+
+test('not support localStorage', () => {
+  Storage._isSupport = false
+  expect(Storage.set('test', 'test test value', 2)).toBeNull()
+})
