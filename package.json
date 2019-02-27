@@ -1,10 +1,11 @@
 {
   "name": "zstorage",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "It is the localstorage that has valid time",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage && codecov -t d4053df6-e655-4256-ab69-a68b8e1bdc4d"
+    "test": "jest --coverage && codecov -t d4053df6-e655-4256-ab69-a68b8e1bdc4d",
+    "postinstall": "node -e \"console.log('\\u001b[35m\\u001b[1m >>> Welcome to use this, if you has some problem, you can tell me <<< \\u001b[0m')\""
   },
   "repository": {
     "type": "git",

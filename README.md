@@ -6,7 +6,7 @@ the localStorage that has expired time
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fklren0312%2FlocalStorage_hasExpiration.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fklren0312%2FlocalStorage_hasExpiration?ref=badge_shield)
 [![codecov](https://codecov.io/gh/klren0312/localStorage_hasExpiration/branch/master/graph/badge.svg)](https://codecov.io/gh/klren0312/localStorage_hasExpiration)
 
-[npm-image]: https://img.shields.io/badge/npm-v1.0.8-blue.svg
+[npm-image]: https://img.shields.io/badge/npm-v1.0.9-blue.svg
 [npm-url]: https://www.npmjs.com/package/zstorage
 
 
