@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --coverage && codecov -t d4053df6-e655-4256-ab69-a68b8e1bdc4d",
-    "postinstall": "node -e \"console.log('\\u001b[35m\\u001b[1m >>> Welcome to use this, if you has some problem, you can tell me <<< \\u001b[0m')\""
+    "postinstall": "node -e \"console.log('\\u001b[35m\\u001b[1m >>> Welcome to use this, if you has some problem, you can tell me <<< \\u001b[0m\\n\\u001b[35m\u001b[1m >>> Send Email To zvd@zzes1314.cn <<< \\u001b[0m')\""
   },
   "repository": {
     "type": "git",

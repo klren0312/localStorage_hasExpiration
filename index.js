@@ -39,7 +39,10 @@ class Storage {
     if (!this._isSupport) {
       return null
     }
-
+    if (!key && !value && !expired_second) {
+      console.error('missing parameter')
+      return null
+    }
     // 存储实例
     const entity = {
       timestamp: Storage.timestamp,
@@ -92,12 +95,11 @@ class Storage {
     if (!this._isSupport) {
       return null
     }
-
-    try {
-      window.localStorage.removeItem(key)
-    } catch (err) {
-      console.error(err)
+    if (!key) {
+      console.error('missing parameter')
+      return null
     }
+    window.localStorage.removeItem(key)
     return this
   }
 

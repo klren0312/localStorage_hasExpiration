@@ -6,6 +6,29 @@ test('set value and get value in valid time', () => {
   expect(data).toBe('test value')
 });
 
+test('test remove storage key', () => {
+  Storage.set('test', 'test value')
+  expect(Storage.get('test')).toBe('test value')
+  Storage.remove('test')
+  expect(Storage.get('test')).toBeNull()
+})
+
+test('test clean the storage', () => {
+  Storage.set('test1', 'test value1')
+  Storage.set('test2', 'test value2')
+  expect(Storage.get('test1')).toBe('test value1')
+  expect(Storage.get('test2')).toBe('test value2')
+  Storage.clear()
+  expect(Storage.get('test1')).toBeNull()
+  expect(Storage.get('test2')).toBeNull()
+})
+
+test('set, get, remove error', () => {
+  expect(Storage.set()).toBeNull()
+  expect(Storage.get()).toBeNull()
+  expect(Storage.remove()).toBeNull()
+})
+
 /**
  * 睡眠函数
  * @param {Number} s 秒
@@ -27,8 +50,3 @@ test('get value in invalid time', async () => {
   const data = Storage.get('test')
   expect(data).toBeNull()
 }, 5000);
-
-test('not support localStorage', () => {
-  Storage._isSupport = false
-  expect(Storage.set('test', 'test test value', 2)).toBeNull()
-})
