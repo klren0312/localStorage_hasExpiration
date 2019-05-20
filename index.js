@@ -25,6 +25,7 @@ class Storage {
    * @param {Object} entity 存储实例
    */
   static __isExpired(entity) {
+    /* istanbul ignore next */
     if(!entity) return true // 无实例, 即失效
     return Storage.timestamp - (entity.timestamp + entity.expired_second) >= 0
   }
@@ -64,15 +65,10 @@ class Storage {
     }
 
     let entity
-    try {
-      entity = window.localStorage.getItem(key)
-      if (entity) {
-        entity = JSON.parse(entity)
-      } else {
-        return null
-      }
-    } catch (err) {
-      console.error(err)
+    entity = window.localStorage.getItem(key)
+    if (entity) {
+      entity = JSON.parse(entity)
+    } else {
       return null
     }
     //没有设置过期时间, 直接返回值
@@ -110,12 +106,7 @@ class Storage {
     if (!this._isSupport) {
       return null
     }
-
-    try {
-      window.localStorage.clear()
-    } catch (err) {
-      console.error(err)
-    }
+    window.localStorage.clear() 
     return this
   }
 }

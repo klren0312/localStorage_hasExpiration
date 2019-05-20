@@ -1,6 +1,6 @@
 {
   "name": "zstorage",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "It is the localstorage that has valid time",
   "main": "index.js",
   "scripts": {
