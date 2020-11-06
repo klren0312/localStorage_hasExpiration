@@ -1,17 +1,11 @@
+const NodeStorage = require('./adapters/NodeStorage')
 class Storage {
   /**
    * 构造器
    * constructor
    */
   constructor () {
-    this._isSupport = true
-    try {
-      const test = 'localStorage support test'
-      window.localStorage.setItem('test', test)
-      window.localStorage.removeItem('test')
-    } catch (e) {
-      this._isSupport = false
-    }
+    this.StorageInstance = new NodeStorage()
   }
 
   /**
@@ -37,9 +31,6 @@ class Storage {
    * @param {Number} expired_second 过期时间 单位秒
    */
   set (key, value, expired_second) {
-    if (!this._isSupport) {
-      return null
-    }
     if (!key && !value && !expired_second) {
       console.error('missing parameter')
       return null
@@ -51,7 +42,7 @@ class Storage {
       key,
       value
     }
-    window.localStorage.setItem(key, JSON.stringify(entity))
+    this.StorageInstance.setItem(key, JSON.stringify(entity))
     return this
   }
   
@@ -60,12 +51,8 @@ class Storage {
    * @param {String} key 键
    */
   get (key) {
-    if (!this._isSupport) {
-      return null
-    }
-
     let entity
-    entity = window.localStorage.getItem(key)
+    entity = this.StorageInstance.getItem(key)
     if (entity) {
       entity = JSON.parse(entity)
     } else {
@@ -88,14 +75,11 @@ class Storage {
    * @param {String} key 键
    */
   remove (key) {
-    if (!this._isSupport) {
-      return null
-    }
     if (!key) {
       console.error('missing parameter')
       return null
     }
-    window.localStorage.removeItem(key)
+    this.StorageInstance.removeItem(key)
     return this
   }
 
@@ -103,12 +87,9 @@ class Storage {
    * 清空存储
    */
   clear () {
-    if (!this._isSupport) {
-      return null
-    }
-    window.localStorage.clear() 
+    this.StorageInstance.clear() 
     return this
   }
 }
 
-export default new Storage()
+module.exports = new Storage()

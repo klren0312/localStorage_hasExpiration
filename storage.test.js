@@ -1,5 +1,7 @@
+/**
+ * @jest-environment node
+ */
 import Storage from '.'
-
 test('set value and get value in valid time', () => {
   Storage.set('test', 'test value', 5)
   const data = Storage.get('test')
