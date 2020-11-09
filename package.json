@@ -1,6 +1,6 @@
 {
   "name": "zstorage-node",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "It is the localstorage that has valid time, can use in node",
   "main": "index.js",
   "scripts": {
