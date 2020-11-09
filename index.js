@@ -4,8 +4,8 @@ class Storage {
    * 构造器
    * constructor
    */
-  constructor () {
-    this.StorageInstance = new NodeStorage()
+  constructor (path = '') {
+    this.StorageInstance = new NodeStorage(path)
   }
 
   /**
@@ -92,4 +92,4 @@ class Storage {
   }
 }
 
-module.exports = new Storage()
+module.exports = Storage

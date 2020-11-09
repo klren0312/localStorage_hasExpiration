@@ -1,7 +1,8 @@
 /**
  * @jest-environment node
  */
-const Storage = require('.')
+const ZStorage = require('.')
+const Storage = new ZStorage()
 test('set value and get value in valid time', () => {
   Storage.set('test', 'test value', 5)
   const data = Storage.get('test')
