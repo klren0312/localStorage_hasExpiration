@@ -13,7 +13,7 @@ the localStorage that has expired time, you can use it in NodeJS
 
 ## Install
 ```bash
-$ npm install zstorage --save
+$ npm install zstorage-node --save
 ```
 
 ## Test
