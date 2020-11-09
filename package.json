@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/klren0312/localStorage_hasExpiration/issues"
   },
-  "homepage": "https://github.com/klren0312/localStorage_hasExpiration#readme",
+  "homepage": "https://github.com/klren0312/localStorage_hasExpiration/tree/feature/node#readme",
   "devDependencies": {
     "@babel/core": "^7.3.3",
     "@babel/preset-env": "^7.12.1",
