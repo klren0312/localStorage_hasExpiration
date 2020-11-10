@@ -1,6 +1,13 @@
 // It's inspired by Lowdb
 
-const fs = require('fs')
+let fs = require('fs')
+
+// 兼容Electron
+try {
+  if(!('undefined' === typeof window)) {
+    fs = window.require('fs')
+  }
+} catch (error) {}
 
 const readFile = fs.readFileSync // 同步读取文件
 const writeFile = fs.writeFileSync // 同步写入文件
