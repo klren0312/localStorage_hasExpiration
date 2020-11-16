@@ -1,6 +1,6 @@
 const path = require('path')
 const FileSync = require('../utils/FileSync')
-const FileCtrl = new FileSync(path.resolve('LOCALDATA.json'))
+
 class NodeStorage {
 
   /**
@@ -9,8 +9,9 @@ class NodeStorage {
    */
   constructor (cusPath) {
     this.data = {}
-    this.path = cusPath ? cusPath : 
-    this.data = FileCtrl.read()
+    this.dpath = cusPath ? cusPath : path.resolve('LOCALDATA.json')
+    this.FileCtrl = new FileSync(this.dpath)
+    this.data = this.FileCtrl.read()
   }
 
   /**
@@ -20,7 +21,7 @@ class NodeStorage {
    */
   setItem (key, value) {
     this.data[key] = value
-    FileCtrl.write(this.data)
+    this.FileCtrl.write(this.data)
   }
 
   /**
@@ -37,7 +38,7 @@ class NodeStorage {
    */
   removeItem (key) {
     delete this.data[key]
-    FileCtrl.write(this.data)
+    this.FileCtrl.write(this.data)
   }
 
   /**
@@ -45,7 +46,7 @@ class NodeStorage {
    */
   clear () {
     this.data = {}
-    FileCtrl.write(this.data)
+    this.FileCtrl.write(this.data)
   }
 }
 
