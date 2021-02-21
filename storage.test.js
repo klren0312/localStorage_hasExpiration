@@ -26,6 +26,17 @@ test('test clean the storage', () => {
   expect(Storage.get('test2')).toBeNull()
 })
 
+test('test edit storage', () => {
+  Storage.set('test1', 'test value1')
+  Storage.set('test2', 'test value2')
+  expect(Storage.get('test1')).toBe('test value1')
+  expect(Storage.get('test2')).toBe('test value2')
+  Storage.set('test1', 'edit test value1')
+  Storage.set('test2', 'edit test value2')
+  expect(Storage.get('test1')).toBe('edit test value1')
+  expect(Storage.get('test2')).toBe('edit test value2')
+})
+
 test('set, get, remove error', () => {
   expect(Storage.set()).toBeNull()
   expect(Storage.get()).toBeNull()

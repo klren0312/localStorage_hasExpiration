@@ -20,6 +20,7 @@ class NodeStorage {
    * @param {String} value 值
    */
   setItem (key, value) {
+    this.data = this.FileCtrl.read()
     this.data[key] = value
     this.FileCtrl.write(this.data)
   }
@@ -37,6 +38,7 @@ class NodeStorage {
    * @param {String} key 键
    */
   removeItem (key) {
+    this.data = this.FileCtrl.read()
     delete this.data[key]
     this.FileCtrl.write(this.data)
   }
