@@ -1,6 +1,7 @@
 // It's inspired by Lowdb
 
-let fs = require('fs')
+const fs = require('fs')
+const AesTool = require('./aes')
 
 // 兼容Electron
 try {
@@ -13,9 +14,10 @@ const readFile = fs.readFileSync // 同步读取文件
 const writeFile = fs.writeFileSync // 同步写入文件
 
 class FileSync {
-  constructor(filePath) {
+  constructor(filePath, key = 'localstorage1234', iv = '1012132343363708') {
     this.defaultValue = {} // 设置默认值, 当文件不存在的时候, 创建文件并填入
     this.path = filePath // 文件存放目录地址
+    this.aes = new AesTool(key, iv)
   }
 
   /**
@@ -30,7 +32,8 @@ class FileSync {
         // 按照utf8读取文件内容, 并去除前后空格
         const data = readFile(this.path, 'utf-8').trim()
         // 如果文件内容为空, 则返回默认值
-        return data ? JSON.parse(data) : this.defaultValue
+        const decryptionData = this.aes.decryption(data)
+        return decryptionData ? JSON.parse(decryptionData) : this.defaultValue
       } catch (e) {
         // 内容不是JSON
         if (e instanceof SyntaxError) {
@@ -40,7 +43,8 @@ class FileSync {
       }
     } else {
       // 没有文件, 就创建文件, 并且写入默认值
-      writeFile(this.path, JSON.stringify(this.defaultValue))
+      const encryptionData = this.aes.encryption(JSON.stringify(this.defaultValue))
+      writeFile(this.path, encryptionData)
       return this.defaultValue
     }
   }
@@ -50,7 +54,8 @@ class FileSync {
    * @param {String} data 文件值
    */
   write(data) {
-    return writeFile(this.path, JSON.stringify(data))
+    const encryptionData = this.aes.encryption(JSON.stringify(data))
+    return writeFile(this.path, encryptionData)
   }
 }
 
