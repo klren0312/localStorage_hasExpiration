@@ -28,7 +28,8 @@ $ npm run test
 > you can see example in `storage.test.js`
 
 ```javascript
-const Storage = require('zstorage')
+const ZStorage = require('zstorage-node')
+const Storage = new ZStorage('test.txt', '', '')
 Storage.set('test', {t:1,b:2}, 5)
 console.log('current,', Storage.get('test'))
 setTimeout(() => console.log('after 5s,', Storage.get('test')), 5000)

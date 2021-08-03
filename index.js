@@ -2,10 +2,12 @@ const NodeStorage = require('./adapters/NodeStorage')
 class Storage {
   /**
    * 构造器
-   * constructor
+   * @param {string} path 文件路径
+   * @param {string} key aes的key
+   * @param {string} iv aes的iv
    */
-  constructor (path = '') {
-    this.StorageInstance = new NodeStorage(path)
+  constructor (path = '', key = 'localstorage1234', iv = '1012132343363708') {
+    this.StorageInstance = new NodeStorage(path, key, iv)
   }
 
   /**

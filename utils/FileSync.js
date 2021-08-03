@@ -14,7 +14,13 @@ const readFile = fs.readFileSync // 同步读取文件
 const writeFile = fs.writeFileSync // 同步写入文件
 
 class FileSync {
-  constructor(filePath, key = 'localstorage1234', iv = '1012132343363708') {
+  /**
+   * 构造器
+   * @param {string} filePath 文件路径
+   * @param {string} key aes的key
+   * @param {string} iv aes的iv
+   */
+  constructor(filePath, key, iv) {
     this.defaultValue = {} // 设置默认值, 当文件不存在的时候, 创建文件并填入
     this.path = filePath // 文件存放目录地址
     this.aes = new AesTool(key, iv)

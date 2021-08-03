@@ -6,11 +6,13 @@ class NodeStorage {
   /**
    * 构造器
    * @param {String} cusPath 存储文件地址
+   * @param {String} key aes的key
+   * @param {String} iv aes的iv
    */
-  constructor (cusPath) {
+  constructor (cusPath, key, iv) {
     this.data = {}
     this.dpath = cusPath ? cusPath : path.resolve('LOCALDATA.json')
-    this.FileCtrl = new FileSync(this.dpath)
+    this.FileCtrl = new FileSync(this.dpath, key, iv)
     this.data = this.FileCtrl.read()
   }
 

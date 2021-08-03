@@ -64,3 +64,11 @@ test('get value in invalid time', async () => {
   const data = Storage.get('test')
   expect(data).toBeNull()
 }, 5000);
+
+test('aes encrypt and decrypt data', async () => {
+  const key = 'decryptdata12345'
+  const iv = '1012132343363708'
+  const StorageT = new ZStorage('test.txt', key, iv)
+  StorageT.set('test', 'test value')
+  expect(StorageT.get('test')).toBe('test value')
+})
