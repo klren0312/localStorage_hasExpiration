@@ -1,7 +1,7 @@
 /**
  * @jest-environment node
  */
-import Storage from '.'
+import Storage from '../src'
 test('not support localStorage', () => {
   expect(Storage._isSupport).toBe(false)
   expect(Storage.set('test', 'test test value', 2)).toBeNull()

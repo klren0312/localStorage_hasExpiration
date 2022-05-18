@@ -1,4 +1,4 @@
-import Storage from '.'
+import Storage from '../src'
 
 test('set value and get value in valid time', () => {
   Storage.set('test', 'test value', 5)
@@ -9,7 +9,7 @@ test('set value and get value in valid time', () => {
 test('test remove storage key', () => {
   Storage.set('test', 'test value')
   expect(Storage.get('test')).toBe('test value')
-  Storage.remove('test')
+  expect(Storage.remove('test')).toBe(true)
   expect(Storage.get('test')).toBeNull()
 })
 
@@ -36,7 +36,7 @@ test('set, get, remove error', () => {
 function sleep(s) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve();
+      resolve(true);
     }, s * 1000);
   });
 }
@@ -44,7 +44,7 @@ function sleep(s) {
 // Timeout - Async callback was not invoked within the 5000ms timeout specified by jest.setTimeout.
 // issue: https://github.com/facebook/jest/issues/5055
 test('get value in invalid time', async () => {
-  Storage.clear()
+  expect(Storage.clear()).toBe(true)
   Storage.set('test', 'test test value', 2)
   await sleep(3)
   const data = Storage.get('test')
