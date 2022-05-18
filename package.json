@@ -1,8 +1,9 @@
 {
   "name": "zstorage",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "It is the localstorage that has valid time",
   "main": "dist/zstorage.min.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "test": "jest --coverage && codecov -t d4053df6-e655-4256-ab69-a68b8e1bdc4d",
     "postinstall": "node -e \"console.log('\\u001b[35m\\u001b[1m >>> Welcome to use this, if you has some problem, you can tell me <<< \\u001b[0m\\n\\u001b[35m\u001b[1m >>> Send Email To zvd@zzes1314.cn <<< \\u001b[0m')\"",
