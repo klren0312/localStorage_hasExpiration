@@ -82,7 +82,11 @@ class ZStorage {
     const entityString: string | null = window.localStorage.getItem(key)
     let entity: Entity
     if (entityString) {
-      entity = JSON.parse(entityString)
+      try {
+        entity = JSON.parse(entityString)
+      } catch (error) {
+        return entityString
+      }
     } else {
       return null
     }

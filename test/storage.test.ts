@@ -29,6 +29,11 @@ test('set, get, remove error', () => {
   expect(Storage.remove()).toBeNull()
 })
 
+test('get the value that not use zstorage', () => {
+  window.localStorage.setItem('testStorage', 'test storage')
+  expect(Storage.get('testStorage')).toBe('test storage')
+})
+
 /**
  * 睡眠函数
  * @param {Number} s 秒
