@@ -1,6 +1,6 @@
 {
   "name": "zstorage",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "description": "It is the localstorage that has valid time",
   "main": "dist/zstorage.min.js",
   "types": "dist/index.d.ts",
